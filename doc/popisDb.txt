@@ -1,0 +1,49 @@
+V databázi "app1" existují následující tabulky:
+
+Categories - obsahující kategorie produktů:
+
+category_id - primární klíč
+name - název kategorie
+Customers - obsahující zákazníky:
+
+customer_id - primární klíč
+name - jméno zákazníka
+email - e-mail zákazníka
+password - heslo zákazníka
+registration_date - datum registrace
+Products - obsahující produkty:
+
+product_id - primární klíč
+name - název produktu
+description - popis produktu
+price - cena produktu
+in_stock - informace o dostupnosti produktu
+category_id - kategorie produktu (cizí klíč od Categories)
+Orders - obsahující objednávky:
+
+order_id - primární klíč
+customer_id - zákazník, který objednal (cizí klíč od Customers)
+order_date - datum objednání
+status - stav objednávky
+total_price - celková cena objednávky
+Order_items - obsahující položky objednávky:
+
+order_item_id - primární klíč
+order_id - objednávka, ke které patří (cizí klíč od Orders)
+product_id - produkt v objednávce (cizí klíč od Products)
+quantity - množství produktu v objednávce
+Navíc existují 2 pohledy (views):
+
+Current_stock - zobrazuje stav skladu produktů:
+
+product_id
+name
+price
+in_stock
+Recent_orders - zobrazuje nedávné objednávky:
+
+order_id
+name - jméno zákazníka
+order_date
+status
+total_price
